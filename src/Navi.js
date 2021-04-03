@@ -1,11 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText,
+} from "reactstrap";
+import CartSummary from "./CartSummary";
 
 export default class Navi extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Navi Comp</h2>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Nortwind App</NavbarBrand>
+          <NavbarToggler />
+          <Collapse navbar>
+      
+         
+          </Collapse>
+          <Nav className="mr-auto" navbar>
+              <CartSummary cart={this.props.cart}></CartSummary>
+            </Nav>
+        </Navbar>
+      </div>
+    );
+  }
 }
