@@ -1,19 +1,7 @@
 import React, { Component } from "react";
 import {
   Table,
-  Button,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
+  Button
 } from "reactstrap";
 export default class ProductList extends Component {
   render() {

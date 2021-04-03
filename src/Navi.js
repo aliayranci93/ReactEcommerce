@@ -4,10 +4,7 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarText,
+  Nav
 } from "reactstrap";
 import CartSummary from "./CartSummary";
 
@@ -23,7 +20,7 @@ export default class Navi extends Component {
          
           </Collapse>
           <Nav className="mr-auto" navbar>
-              <CartSummary cart={this.props.cart}></CartSummary>
+              <CartSummary cart={this.props.cart} removeFromCart={this.props.removeFromCart}></CartSummary>
             </Nav>
         </Navbar>
       </div>

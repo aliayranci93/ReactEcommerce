@@ -43,6 +43,7 @@ export default class App extends Component {
 }
 
 addToCart = (product)=>{
+  debugger;
   let newCart = this.state.cart;
   var addedItem=newCart.find(c=>c.product.id===product.id);
 
@@ -54,6 +55,11 @@ addToCart = (product)=>{
   } 
   this.setState({cart:newCart});
 }
+removeFromCart = (product)=>{
+  debugger;
+  let newCart = this.state.cart.filter(c=>c.product.id!==product.id);
+  this.setState({cart:newCart});
+}
 
   render() {
     let productInfo={title:"Product List"};
@@ -62,14 +68,14 @@ addToCart = (product)=>{
     <div className="App">
       <Container>
  
-      <Navi cart={this.state.cart}></Navi>
+      <Navi cart={this.state.cart} removeFromCart={this.removeFromCart}></Navi>
      
         <Row>
           <Col xs="3">
           <CategoryList changeCategory={this.changeCategory} categories={this.state.categories}  info={categoryInfo} currentCategory={this.state.currentCategory}></CategoryList>
           </Col>
           <Col xs="9">
-          <ProductList addToCart={this.addToCart} products={this.state.products} info={productInfo}></ProductList>
+          <ProductList addToCart={this.addToCart}  products={this.state.products} info={productInfo}></ProductList>
           </Col>
   
 

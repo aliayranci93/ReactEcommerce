@@ -4,7 +4,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText,
   NavLink,
   NavItem,
   Badge,
@@ -19,6 +18,7 @@ export default class CartSummary extends Component {
         <DropdownMenu right>
           {this.props.cart.map((cartItem) => (
             <DropdownItem key={cartItem.product.id}>
+              <Badge color="danger" onClick={()=>this.props.removeFromCart(cartItem.product)}>X</Badge>
               {cartItem.product.productName}
               <Badge>{cartItem.quantity}</Badge>
             </DropdownItem>
